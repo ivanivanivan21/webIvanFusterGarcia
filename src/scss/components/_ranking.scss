@@ -1,0 +1,114 @@
+.bloque {
+    display: flex;
+    flex-direction: column;
+    
+    .title-ranking {
+        height: 80px;
+        font-size: $font-size-h1;
+        color: $color-blanco;
+        background-color: transparentize($color-rojo, 0.3);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 20px;
+        @include if-mobile {
+            font-size: $font-size-h4;
+        }
+    }
+    .ranking-container {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        @include if-desktop {
+            flex-direction: row;
+        }
+        @include if-desktop {
+            flex-direction: row;
+        }
+        .album-item {
+            height: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            @include if-mobile-landscape {
+                height: 550px;
+                flex-direction: row;
+            }
+            @include if-desktop {
+                height: 900px;
+                flex-direction: column;
+            }
+            .informacion {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+                @include if-mobile-landscape {
+                    width: 40%;
+                }
+                @include if-desktop {
+                    width: 80%;
+                }
+                .nombre {
+                    font-family: $title-font-family;
+                    font-size: $font-size-h3;
+                    padding-bottom: 30px;
+                    @include if-mobile {
+                        font-size: $font-size-h4;
+                    }
+                }
+                .texto {
+                    font-size: $font-size-base;
+                    padding-bottom: 20px;
+                    line-height: 1.7em;
+                    @include if-mobile {
+                        line-height: 1.2em;
+                    }
+                }
+                .ventas {
+                    font-size: $font-size-h5;
+                    color: $color-azul;
+                }
+            }
+            .img-ranking {
+                height: 300px;
+                @include if-mobile-landscape {
+                    height: 350px;
+                }
+                @include if-desktop {
+                    height: 300px;
+                }
+            }
+            &.uno {
+                background-color: transparentize($color-rojo, 0.7);
+                @include if-desktop {
+                    order: 2;
+                    img {
+                        order: -1;
+                    }
+                }
+            }
+            &.dos {
+                background-color: transparentize($color-blanco, 0.2);
+                img {
+                    @include if-mobile-landscape {
+                        order: -1;
+                    }
+                    @include if-desktop {
+                        order: 0;
+                    }
+                }
+                @include if-desktop {
+                    order: 1;
+                }
+            }
+            &.tres {
+                background-color: transparentize($color-rojo, 0.9);
+                @include if-desktop {
+                    order: 7;
+                }
+            }
+        }
+    }
+}

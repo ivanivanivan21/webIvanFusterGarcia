@@ -1,0 +1,34 @@
+.web-footer {
+
+    box-sizing: border-box;
+    background:fade-out($color:  $color-rojo, $amount: 0.25);
+    color: $color-azul;
+    padding: 10px;
+    text-align: center;
+
+    bottom: 0px;
+    width: 100%;
+    transition: background 0.3s;
+    font-family: $title-font-family; 
+
+    
+    &:hover{
+        background:fade-out($color-rojo,0.1);
+    }
+ 
+    //position: fixed;
+   // top: 0;
+   // width: 100%;
+   a:hover{
+    color:black;
+    transition: 1.5s;
+    padding: 10px 10px;
+    background:fade-out($color-blanco,0.30);
+
+}
+}
+
+.web-footer-fixed { 
+    @extend .web-footer;
+    position: fixed;
+}
